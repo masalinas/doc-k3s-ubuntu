@@ -93,4 +93,5 @@ https://127.0.0.1:8443/
 
 ## Some Links
 https://0to1.nl/post/k3s-kubectl-permission/
+https://artifacthub.io/packages/helm/k8s-dashboard/kubernetes-dashboard
 https://www.virtualizationhowto.com/2021/06/kubernetes-dashboard-helm-installation-and-configuration/

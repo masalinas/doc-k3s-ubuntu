@@ -1,5 +1,5 @@
 # Description
-Install kubernetes k3s in Ubuntu 20.04 with kubernetes Dashboard using helm
+Install kubernetes k3s in Ubuntu 20.04 with Kubernetes Dashboard using helm
 
 ## Install k3s by default
 ```shell

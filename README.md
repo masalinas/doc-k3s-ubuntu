@@ -1,9 +1,17 @@
 # Description
 Install kubernetes k3s in Ubuntu 20.04 with Kubernetes Dashboard using helm
 
-## Install k3s by default
+## Install k3s by default like services
 ```shell
 curl -sfL https://get.k3s.io | sh -
+```
+
+Check installation
+```shell
+kubectl get nodes
+
+NAME             STATUS   ROLES                  AGE   VERSION
+k3s-virtualbox   Ready    control-plane,master   16h   v1.23.8+k3s1
 ```
 
 ## Configure kubectl without sudo privileges

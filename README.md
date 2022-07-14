@@ -18,6 +18,7 @@ k3s-virtualbox   Ready    control-plane,master   16h   v1.23.8+k3s1
 Copy the context to your ~/.kube/config and set this config as the default.
 
 ```shell
+mkdir .kube
 sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config &&
 sudo chown $USER ~/.kube/config &&
 chmod 600 ~/.kube/config &&

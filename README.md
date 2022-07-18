@@ -101,7 +101,7 @@ https://127.0.0.1:8443/
 
 ## Connect to traefik Dashboard
 
-Create a port forward to connect to kubernetes dashboard
+Create a port forward to connect to traefik dashboard
 ```shell
 kubectl -n kube-system port-forward $(kubectl -n kube-system get pods --selector "app.kubernetes.io/name=traefik" --output=name) 9000:9000
 ```

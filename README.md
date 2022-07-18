@@ -84,7 +84,7 @@ namespace:  11 bytes
 token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IjUwX2lqNFY2M3VIUGxuSzZGMzh1dG1KT0JISGlFMVdHTWVISUs3Tl9zNm8ifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJkYXNoYm9hcmQtYWRtaW4tdG9rZW4tcm1saHIiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoiZGFzaGJvYXJkLWFkbWluIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQudWlkIjoiYzAzOGU2ODctZDRjYS00Yjc0LWEyNmEtODMyMzRlZTI0Njc1Iiwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50Omt1YmUtc3lzdGVtOmRhc2hib2FyZC1hZG1pbiJ9.HW4a6RNnb7zdTuLBjOJIUzAwW4gzrmkjYJDCX0XnZaD5YbmSkv1M8bd-Cc8JNkHVPqdeK090XpsYOsT2CFgPLcZGdMkQHR9lH_yhhIElkzAJdyQ7x3yuPQg4cMh_ZH6kzqfSacvfkakowTmuSq3Cd3kMqAujMRajJMN6qmK_R4HMZkhJ9akXPXAj1F3amtGpegCvfLn7KmwMK7dF7BYUpPbChqDxOZn_K3OoRMabiR5d82flyeZYyy8FZXmmC1fnWgFgNeG7bOKJ6AGN2sEUTA0cmq9ixsE2liQarI2YhapLR8ZEDeWP0B6NkF0OHK4_PHdSFT8H93QROEMJAbkflQ
 ```
 
-##Connect to kubernetes Dashboard
+## Connect to kubernetes Dashboard
 Create a port forward to connect to kubernetes dashboard
 ```shell
 export POD_NAME=$(kubectl get pods -n default -l "app.kubernetes.io/name=kubernetes-dashboard,app.kubernetes.io/instance=kubernetes-dashboard" -o jsonpath="{.items[0].metadata.name}")
@@ -98,6 +98,19 @@ https://127.0.0.1:8443/
 
 ![kubernetes-dashboard](captures/kubernetes-dashboard.png)
 
+## Connect to traefik Dashboard
+
+Create a port forward to connect to kubernetes dashboard
+```shell
+kubectl -n kube-system port-forward $(kubectl -n kube-system get pods --selector "app.kubernetes.io/name=traefik" --output=name) 9000:9000
+```
+
+Connect to traefik dashboard
+```shell
+http://127.0.0.1:9000/dashboard/
+```
+
+![traefik-dashboard](captures/traefik-dashboard.png)
 
 ## Some Links
 - https://0to1.nl/post/k3s-kubectl-permission/
